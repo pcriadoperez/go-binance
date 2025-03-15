@@ -9,13 +9,13 @@ import (
 )
 
 type serverServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestServerServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &serverServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("Ping", func(t *testing.T) {

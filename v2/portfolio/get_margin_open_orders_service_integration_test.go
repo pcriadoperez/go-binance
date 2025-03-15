@@ -6,13 +6,13 @@ import (
 )
 
 type getMarginOpenOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestGetMarginOpenOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &getMarginOpenOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetOpenOrders_SingleSymbol", func(t *testing.T) {

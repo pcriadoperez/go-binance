@@ -6,13 +6,13 @@ import (
 )
 
 type cmOpenOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMOpenOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmOpenOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetOpenCMOrder_ByOrderID", func(t *testing.T) {

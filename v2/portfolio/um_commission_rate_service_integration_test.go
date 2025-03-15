@@ -9,13 +9,13 @@ import (
 )
 
 type umCommissionRateServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMCommissionRateServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umCommissionRateServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetCommissionRate", func(t *testing.T) {

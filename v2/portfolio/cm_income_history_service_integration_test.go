@@ -10,13 +10,13 @@ import (
 )
 
 type cmIncomeHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMIncomeHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmIncomeHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetCMIncomeHistory", func(t *testing.T) {

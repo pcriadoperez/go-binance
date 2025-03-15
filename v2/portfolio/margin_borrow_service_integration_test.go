@@ -9,13 +9,13 @@ import (
 )
 
 type marginBorrowServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginBorrowServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginBorrowServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetMaxBorrow", func(t *testing.T) {

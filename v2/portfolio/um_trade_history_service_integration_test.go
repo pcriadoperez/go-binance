@@ -10,13 +10,13 @@ import (
 )
 
 type umTradeHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMTradeHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umTradeHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetUMTradeHistoryDownloadID", func(t *testing.T) {

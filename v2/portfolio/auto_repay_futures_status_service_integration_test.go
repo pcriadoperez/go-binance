@@ -9,13 +9,13 @@ import (
 )
 
 type autoRepayFuturesStatusServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestAutoRepayFuturesStatusServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &autoRepayFuturesStatusServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetAutoRepayFuturesStatus", func(t *testing.T) {

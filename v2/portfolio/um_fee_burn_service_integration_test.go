@@ -6,13 +6,13 @@ import (
 )
 
 type umFeeBurnServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMFeeBurnServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umFeeBurnServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("ToggleFeeBurn_Enable", func(t *testing.T) {

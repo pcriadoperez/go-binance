@@ -6,13 +6,13 @@ import (
 )
 
 type cmOpenConditionalOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMOpenConditionalOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmOpenConditionalOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetOpenConditionalOrders_SingleSymbol", func(t *testing.T) {

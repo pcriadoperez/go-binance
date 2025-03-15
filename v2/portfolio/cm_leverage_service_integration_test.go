@@ -9,13 +9,13 @@ import (
 )
 
 type cmLeverageServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMLeverageServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmLeverageServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("ChangeLeverage", func(t *testing.T) {

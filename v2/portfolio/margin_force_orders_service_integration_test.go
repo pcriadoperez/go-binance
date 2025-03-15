@@ -7,13 +7,13 @@ import (
 )
 
 type marginForceOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginForceOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginForceOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetForceOrders_DefaultParams", func(t *testing.T) {

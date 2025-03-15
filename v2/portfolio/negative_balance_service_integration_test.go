@@ -10,13 +10,13 @@ import (
 )
 
 type negativeBalanceServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestNegativeBalanceServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &negativeBalanceServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetNegativeBalanceExchangeRecord", func(t *testing.T) {

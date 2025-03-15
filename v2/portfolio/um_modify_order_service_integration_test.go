@@ -6,13 +6,13 @@ import (
 )
 
 type umModifyOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMModifyOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umModifyOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("ModifyUMOrder_ByOrderID", func(t *testing.T) {

@@ -9,13 +9,13 @@ import (
 )
 
 type umTradingStatusServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMTradingStatusServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umTradingStatusServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetTradingStatus", func(t *testing.T) {

@@ -10,13 +10,13 @@ import (
 )
 
 type umIncomeHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMIncomeHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umIncomeHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetUMIncomeHistory", func(t *testing.T) {

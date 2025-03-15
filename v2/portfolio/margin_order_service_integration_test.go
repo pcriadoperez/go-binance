@@ -9,13 +9,13 @@ import (
 )
 
 type marginOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("PlaceOrder", func(t *testing.T) {

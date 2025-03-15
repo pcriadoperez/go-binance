@@ -9,13 +9,13 @@ import (
 )
 
 type marginOCOQueryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginOCOQueryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginOCOQueryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("QueryOCO", func(t *testing.T) {

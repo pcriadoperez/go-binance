@@ -9,13 +9,13 @@ import (
 )
 
 type repayFuturesNegativeBalanceServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestRepayFuturesNegativeBalanceServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &repayFuturesNegativeBalanceServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("RepayFuturesNegativeBalance", func(t *testing.T) {

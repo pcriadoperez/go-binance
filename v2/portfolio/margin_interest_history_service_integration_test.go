@@ -10,13 +10,13 @@ import (
 )
 
 type marginInterestHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginInterestHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginInterestHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetMarginInterestHistory", func(t *testing.T) {

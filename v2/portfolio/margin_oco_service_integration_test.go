@@ -9,13 +9,13 @@ import (
 )
 
 type marginOCOServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginOCOServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginOCOServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("PlaceOCOOrder", func(t *testing.T) {

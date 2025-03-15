@@ -7,13 +7,13 @@ import (
 )
 
 type marginAllOCOServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginAllOCOServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginAllOCOServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("AllOCO_Basic", func(t *testing.T) {

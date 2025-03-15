@@ -6,13 +6,13 @@ import (
 )
 
 type cmConditionalOrderHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMConditionalOrderHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmConditionalOrderHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetConditionalOrderHistory_ByStrategyID", func(t *testing.T) {

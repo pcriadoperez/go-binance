@@ -1,18 +1,17 @@
 package portfolio
-
 import (
 	"context"
 	"testing"
 )
 
 type cmQueryOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMQueryOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmQueryOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("QueryCMOrder_ByOrderID", func(t *testing.T) {

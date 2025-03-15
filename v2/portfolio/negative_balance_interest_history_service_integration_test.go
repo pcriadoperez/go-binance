@@ -10,13 +10,13 @@ import (
 )
 
 type negativeBalanceInterestHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestNegativeBalanceInterestHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &negativeBalanceInterestHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetNegativeBalanceInterestHistory", func(t *testing.T) {

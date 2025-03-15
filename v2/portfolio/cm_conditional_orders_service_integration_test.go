@@ -7,13 +7,13 @@ import (
 )
 
 type cmConditionalOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMConditionalOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmConditionalOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetConditionalOrders_SingleSymbol", func(t *testing.T) {

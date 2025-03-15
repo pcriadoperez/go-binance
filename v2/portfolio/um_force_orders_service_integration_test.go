@@ -7,13 +7,13 @@ import (
 )
 
 type umForceOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMForceOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umForceOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetForceOrders_SingleSymbol", func(t *testing.T) {
