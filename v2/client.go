@@ -212,9 +212,10 @@ const (
 	FuturesTransferStatusTypeConfirmed FuturesTransferStatusType = "CONFIRMED"
 	FuturesTransferStatusTypeFailed    FuturesTransferStatusType = "FAILED"
 
-	SideEffectTypeNoSideEffect SideEffectType = "NO_SIDE_EFFECT"
-	SideEffectTypeMarginBuy    SideEffectType = "MARGIN_BUY"
-	SideEffectTypeAutoRepay    SideEffectType = "AUTO_REPAY"
+	SideEffectTypeNoSideEffect    SideEffectType = "NO_SIDE_EFFECT"
+	SideEffectTypeMarginBuy       SideEffectType = "MARGIN_BUY"
+	SideEffectTypeAutoRepay       SideEffectType = "AUTO_REPAY"
+	SideEffectTypeAutoBorrowRepay SideEffectType = "AUTO_BORROW_REPAY"
 
 	TransactionTypeDeposit  TransactionType = "0"
 	TransactionTypeWithdraw TransactionType = "1"
@@ -767,6 +768,10 @@ func (c *Client) NewRateLimitService() *RateLimitService {
 // NewGetAssetDetailService init get asset detail service
 func (c *Client) NewGetAssetDetailService() *GetAssetDetailService {
 	return &GetAssetDetailService{c: c}
+}
+
+func (c *Client) NewWalletBalanceService() *WalletBalanceService {
+	return &WalletBalanceService{c: c}
 }
 
 // NewAveragePriceService init average price service
