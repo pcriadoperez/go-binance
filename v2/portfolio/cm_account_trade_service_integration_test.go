@@ -7,13 +7,13 @@ import (
 )
 
 type cmAccountTradeServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMAccountTradeServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmAccountTradeServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetAccountTrades_BySymbol", func(t *testing.T) {

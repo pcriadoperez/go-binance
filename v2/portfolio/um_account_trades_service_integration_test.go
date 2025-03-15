@@ -7,13 +7,13 @@ import (
 )
 
 type umAccountTradesServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMAccountTradesServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umAccountTradesServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetTrades_Basic", func(t *testing.T) {

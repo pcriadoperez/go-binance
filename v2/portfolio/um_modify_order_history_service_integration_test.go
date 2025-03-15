@@ -7,13 +7,13 @@ import (
 )
 
 type umModifyOrderHistoryServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMModifyOrderHistoryServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umModifyOrderHistoryServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetModifyOrderHistory_ByOrderID", func(t *testing.T) {

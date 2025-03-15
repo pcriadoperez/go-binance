@@ -6,13 +6,13 @@ import (
 )
 
 type marginOpenOCOServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginOpenOCOServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginOpenOCOServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetOpenOCO_Basic", func(t *testing.T) {

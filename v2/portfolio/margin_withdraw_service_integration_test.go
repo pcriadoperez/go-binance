@@ -9,13 +9,13 @@ import (
 )
 
 type marginWithdrawServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginWithdrawServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginWithdrawServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetMaxWithdraw", func(t *testing.T) {

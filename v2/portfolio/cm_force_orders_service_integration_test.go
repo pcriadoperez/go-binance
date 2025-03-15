@@ -7,13 +7,13 @@ import (
 )
 
 type cmForceOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMForceOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmForceOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetForceOrders_SingleSymbol", func(t *testing.T) {

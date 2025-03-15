@@ -6,13 +6,13 @@ import (
 )
 
 type marginLoanServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginLoanServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginLoanServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("MarginLoan", func(t *testing.T) {

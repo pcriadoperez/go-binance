@@ -9,13 +9,13 @@ import (
 )
 
 type umOrderDownloadLinkServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMOrderDownloadLinkServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umOrderDownloadLinkServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetUMOrderDownloadLink", func(t *testing.T) {

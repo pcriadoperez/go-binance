@@ -9,13 +9,13 @@ import (
 )
 
 type umOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("PlaceOrder", func(t *testing.T) {

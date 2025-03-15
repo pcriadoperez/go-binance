@@ -7,13 +7,13 @@ import (
 )
 
 type marginAccountTradesServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestMarginAccountTradesServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &marginAccountTradesServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetTrades_Basic", func(t *testing.T) {

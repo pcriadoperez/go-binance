@@ -6,13 +6,13 @@ import (
 )
 
 type cmADLQuantileServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMADLQuantileServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmADLQuantileServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetADLQuantile_SingleSymbol", func(t *testing.T) {

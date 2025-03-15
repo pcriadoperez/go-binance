@@ -9,13 +9,13 @@ import (
 )
 
 type cmPositionServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMPositionServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmPositionServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetPositionRisk", func(t *testing.T) {

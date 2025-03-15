@@ -9,13 +9,13 @@ import (
 )
 
 type rateLimitServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestRateLimitServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &rateLimitServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetRateLimit", func(t *testing.T) {

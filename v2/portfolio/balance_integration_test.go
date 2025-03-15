@@ -9,13 +9,13 @@ import (
 )
 
 type balanceServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestBalanceServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &balanceServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetBalance", func(t *testing.T) {

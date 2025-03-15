@@ -6,13 +6,13 @@ import (
 )
 
 type umCancelAllConditionalOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMCancelAllConditionalOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umCancelAllConditionalOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("CancelAllUMConditionalOrders", func(t *testing.T) {

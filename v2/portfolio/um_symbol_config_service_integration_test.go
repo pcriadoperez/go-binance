@@ -9,13 +9,13 @@ import (
 )
 
 type umSymbolConfigServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMSymbolConfigServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umSymbolConfigServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetUMSymbolConfig", func(t *testing.T) {

@@ -9,13 +9,13 @@ import (
 )
 
 type cmAccountDetailServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMAccountDetailServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmAccountDetailServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetCMAccountDetail", func(t *testing.T) {

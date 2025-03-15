@@ -9,13 +9,13 @@ import (
 )
 
 type fundAutoCollectionServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestFundAutoCollectionServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &fundAutoCollectionServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("FundAutoCollection", func(t *testing.T) {

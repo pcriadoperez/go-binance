@@ -9,13 +9,13 @@ import (
 )
 
 type cmConditionalOrderServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestCMConditionalOrderServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &cmConditionalOrderServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("PlaceTrailingStopOrder", func(t *testing.T) {

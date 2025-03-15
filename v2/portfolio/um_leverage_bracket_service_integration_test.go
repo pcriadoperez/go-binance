@@ -9,13 +9,13 @@ import (
 )
 
 type umLeverageBracketServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMLeverageBracketServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umLeverageBracketServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetLeverageBracket", func(t *testing.T) {

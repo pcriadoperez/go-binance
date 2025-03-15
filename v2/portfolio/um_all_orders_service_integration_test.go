@@ -7,13 +7,13 @@ import (
 )
 
 type umAllOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMAllOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umAllOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetAllUMOrders_Basic", func(t *testing.T) {

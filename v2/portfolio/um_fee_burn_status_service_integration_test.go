@@ -6,13 +6,13 @@ import (
 )
 
 type umFeeBurnStatusServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestUMFeeBurnStatusServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &umFeeBurnStatusServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetFeeBurnStatus", func(t *testing.T) {

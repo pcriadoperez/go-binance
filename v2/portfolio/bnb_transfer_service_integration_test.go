@@ -9,13 +9,13 @@ import (
 )
 
 type bnbTransferServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestBNBTransferServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &bnbTransferServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("BNBTransfer", func(t *testing.T) {

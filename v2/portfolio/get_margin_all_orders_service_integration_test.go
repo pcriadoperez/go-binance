@@ -7,13 +7,13 @@ import (
 )
 
 type getMarginAllOrdersServiceIntegrationTestSuite struct {
-	baseIntegrationTestSuite
+	*baseIntegrationTestSuite
 }
 
 func TestGetMarginAllOrdersServiceIntegration(t *testing.T) {
 	base := SetupTest(t)
 	suite := &getMarginAllOrdersServiceIntegrationTestSuite{
-		baseIntegrationTestSuite: *base,
+		baseIntegrationTestSuite: base,
 	}
 
 	t.Run("GetAllOrders_Basic", func(t *testing.T) {
