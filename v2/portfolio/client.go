@@ -474,23 +474,6 @@ func (c *Client) NewGetAccountService() *GetAccountService {
 	return &GetAccountService{c: c}
 }
 
-// --------- Trade ---------
-
-// NewUMOrderService init UM order service
-func (c *Client) NewUMOrderService() *UMOrderService {
-	return &UMOrderService{c: c}
-}
-
-// NewUMConditionalOrderService init UM conditional order service
-func (c *Client) NewUMConditionalOrderService() *UMConditionalOrderService {
-	return &UMConditionalOrderService{c: c}
-}
-
-// NewCMOrderService init CM order service
-func (c *Client) NewCMOrderService() *CMOrderService {
-	return &CMOrderService{c: c}
-}
-
 // Add account status constants
 type AccountStatus string
 
@@ -703,3 +686,344 @@ func (c *Client) NewGetRateLimitService() *GetRateLimitService {
 func (c *Client) NewGetNegativeBalanceExchangeRecordService() *GetNegativeBalanceExchangeRecordService {
 	return &GetNegativeBalanceExchangeRecordService{c: c}
 }
+
+// --------- Trade ---------
+
+// NewUMOrderService init UM order service
+func (c *Client) NewUMOrderService() *UMOrderService {
+	return &UMOrderService{c: c}
+}
+
+// NewUMConditionalOrderService init UM conditional order service
+func (c *Client) NewUMConditionalOrderService() *UMConditionalOrderService {
+	return &UMConditionalOrderService{c: c}
+}
+
+// NewCMOrderService creates a new CMOrderService
+func (c *Client) NewCMOrderService() *CMOrderService {
+	return &CMOrderService{c: c}
+}
+
+// NewCMConditionalOrderService creates a new CMConditionalOrderService
+func (c *Client) NewCMConditionalOrderService() *CMConditionalOrderService {
+	return &CMConditionalOrderService{c: c}
+}
+
+// NewMarginOrderService creates a new MarginOrderService
+func (c *Client) NewMarginOrderService() *MarginOrderService {
+	return &MarginOrderService{c: c}
+}
+
+// NewMarginLoanService creates a new MarginLoanService
+func (c *Client) NewMarginLoanService() *MarginLoanService {
+	return &MarginLoanService{c: c}
+}
+
+// NewMarginRepayService creates a new MarginRepayService
+func (c *Client) NewMarginRepayService() *MarginRepayService {
+	return &MarginRepayService{c: c}
+}
+
+// NewMarginOCOService creates a new MarginOCOService
+func (c *Client) NewMarginOCOService() *MarginOCOService {
+	return &MarginOCOService{c: c}
+}
+
+// NewUMCancelOrderService creates a new UMCancelOrderService
+func (c *Client) NewUMCancelOrderService() *UMCancelOrderService {
+	return &UMCancelOrderService{c: c}
+}
+
+// NewUMCancelAllOrdersService creates a new UMCancelAllOrdersService
+func (c *Client) NewUMCancelAllOrdersService() *UMCancelAllOrdersService {
+	return &UMCancelAllOrdersService{c: c}
+}
+
+// NewUMCancelConditionalOrderService creates a new UMCancelConditionalOrderService
+func (c *Client) NewUMCancelConditionalOrderService() *UMCancelConditionalOrderService {
+	return &UMCancelConditionalOrderService{c: c}
+}
+
+// NewUMCancelAllConditionalOrdersService creates a new UMCancelAllConditionalOrdersService
+func (c *Client) NewUMCancelAllConditionalOrdersService() *UMCancelAllConditionalOrdersService {
+	return &UMCancelAllConditionalOrdersService{c: c}
+}
+
+// NewCMCancelOrderService creates a new CMCancelOrderService
+func (c *Client) NewCMCancelOrderService() *CMCancelOrderService {
+	return &CMCancelOrderService{c: c}
+}
+
+// NewCMCancelAllOrdersService creates a new CMCancelAllOrdersService
+func (c *Client) NewCMCancelAllOrdersService() *CMCancelAllOrdersService {
+	return &CMCancelAllOrdersService{c: c}
+}
+
+// NewCMCancelConditionalOrderService creates a new CMCancelConditionalOrderService
+func (c *Client) NewCMCancelConditionalOrderService() *CMCancelConditionalOrderService {
+	return &CMCancelConditionalOrderService{c: c}
+}
+
+// NewCMCancelAllConditionalOrdersService creates a new CMCancelAllConditionalOrdersService
+func (c *Client) NewCMCancelAllConditionalOrdersService() *CMCancelAllConditionalOrdersService {
+	return &CMCancelAllConditionalOrdersService{c: c}
+}
+
+// NewMarginCancelOrderService creates a new MarginCancelOrderService
+func (c *Client) NewMarginCancelOrderService() *MarginCancelOrderService {
+	return &MarginCancelOrderService{c: c}
+}
+
+// NewMarginCancelOCOService creates a new MarginCancelOCOService
+func (c *Client) NewMarginCancelOCOService() *MarginCancelOCOService {
+	return &MarginCancelOCOService{c: c}
+}
+
+
+// NewUMModifyOrderService creates a new UMModifyOrderService
+func (c *Client) NewUMModifyOrderService() *UMModifyOrderService {
+	return &UMModifyOrderService{c: c}
+}
+
+// NewMarginCancelAllOrdersService creates a new MarginCancelAllOrdersService
+func (c *Client) NewMarginCancelAllOrdersService() *MarginCancelAllOrdersService {
+	return &MarginCancelAllOrdersService{c: c}
+}
+
+// NewCMModifyOrderService creates a new CMModifyOrderService
+func (c *Client) NewCMModifyOrderService() *CMModifyOrderService {
+	return &CMModifyOrderService{c: c}
+}
+
+// NewUMQueryOrderService creates a new UMQueryOrderService
+func (c *Client) NewUMQueryOrderService() *UMQueryOrderService {
+	return &UMQueryOrderService{c: c}
+}
+
+// NewUMAllOrdersService creates a new UMAllOrdersService
+func (c *Client) NewUMAllOrdersService() *UMAllOrdersService {
+	return &UMAllOrdersService{c: c}
+}
+
+// NewUMOpenOrderService creates a new UMOpenOrderService
+func (c *Client) NewUMOpenOrderService() *UMOpenOrderService {
+	return &UMOpenOrderService{c: c}
+}
+
+// NewUMOpenOrdersService creates a new UMOpenOrdersService
+func (c *Client) NewUMOpenOrdersService() *UMOpenOrdersService {
+	return &UMOpenOrdersService{c: c}
+}
+
+// NewUMAllConditionalOrdersService creates a new UMAllConditionalOrdersService
+func (c *Client) NewUMAllConditionalOrdersService() *UMAllConditionalOrdersService {
+	return &UMAllConditionalOrdersService{c: c}
+}
+
+// NewUMOpenConditionalOrdersService creates a new UMOpenConditionalOrdersService
+func (c *Client) NewUMOpenConditionalOrdersService() *UMOpenConditionalOrdersService {
+	return &UMOpenConditionalOrdersService{c: c}
+}
+
+// NewUMOpenConditionalOrderService creates a new UMOpenConditionalOrderService
+func (c *Client) NewUMOpenConditionalOrderService() *UMOpenConditionalOrderService {
+	return &UMOpenConditionalOrderService{c: c}
+}
+
+// NewUMConditionalOrderHistoryService creates a new UMConditionalOrderHistoryService
+func (c *Client) NewUMConditionalOrderHistoryService() *UMConditionalOrderHistoryService {
+	return &UMConditionalOrderHistoryService{c: c}
+}
+
+// NewCMQueryOrderService creates a new CMQueryOrderService
+func (c *Client) NewCMQueryOrderService() *CMQueryOrderService {
+	return &CMQueryOrderService{c: c}
+}
+
+// NewCMAllOrdersService creates a new CMAllOrdersService
+func (c *Client) NewCMAllOrdersService() *CMAllOrdersService {
+	return &CMAllOrdersService{c: c}
+}
+
+// NewCMOpenOrderService creates a new CMOpenOrderService
+func (c *Client) NewCMOpenOrderService() *CMOpenOrderService {
+	return &CMOpenOrderService{c: c}
+}
+
+// NewCMOpenOrdersService creates a new CMOpenOrdersService
+func (c *Client) NewCMOpenOrdersService() *CMOpenOrdersService {
+	return &CMOpenOrdersService{c: c}
+}
+
+// NewCMOpenConditionalOrdersService creates a new CMOpenConditionalOrdersService
+func (c *Client) NewCMOpenConditionalOrdersService() *CMOpenConditionalOrdersService {
+	return &CMOpenConditionalOrdersService{c: c}
+}
+
+// NewCMOpenConditionalOrderService creates a new CMOpenConditionalOrderService
+func (c *Client) NewCMOpenConditionalOrderService() *CMOpenConditionalOrderService {
+	return &CMOpenConditionalOrderService{c: c}
+}
+
+// NewCMConditionalOrder creates a new CMConditionalOrder
+func (c *Client) NewCMConditionalOrder() *CMConditionalOrderService {
+	return &CMConditionalOrderService{c: c}
+}
+
+// NewCMConditionalOrdersService creates a new CMConditionalOrdersService
+func (c *Client) NewCMConditionalOrdersService() *CMConditionalOrdersService {
+	return &CMConditionalOrdersService{c: c}
+}
+
+// NewCMConditionalOrderHistoryService creates a new CMConditionalOrderHistoryService
+func (c *Client) NewCMConditionalOrderHistoryService() *CMConditionalOrderHistoryService {
+	return &CMConditionalOrderHistoryService{c: c}
+}
+
+// NewUMForceOrdersService creates a new UMForceOrdersService
+func (c *Client) NewUMForceOrdersService() *UMForceOrdersService {
+	return &UMForceOrdersService{c: c}
+}
+
+// NewCMForceOrdersService creates a new CMForceOrdersService
+func (c *Client) NewCMForceOrdersService() *CMForceOrdersService {
+	return &CMForceOrdersService{c: c}
+}
+
+// NewUMModifyOrderHistoryService creates a new UMModifyOrderHistoryService
+func (c *Client) NewUMModifyOrderHistoryService() *UMModifyOrderHistoryService {
+	return &UMModifyOrderHistoryService{c: c}
+}
+
+// NewCMModifyOrderHistoryService creates a new CMModifyOrderHistoryService
+func (c *Client) NewCMModifyOrderHistoryService() *CMModifyOrderHistoryService {
+	return &CMModifyOrderHistoryService{c: c}
+}
+
+// NewMarginForceOrdersService creates a new MarginForceOrdersService
+func (c *Client) NewMarginForceOrdersService() *MarginForceOrdersService {
+	return &MarginForceOrdersService{c: c}
+}
+
+// NewUMAccountTradeService creates a new UMAccountTradeService
+func (c *Client) NewUMAccountTradeService() *UMAccountTradeService {
+	return &UMAccountTradeService{c: c}
+}
+
+// NewCMAccountTradeService creates a new CMAccountTradeService
+func (c *Client) NewCMAccountTradeService() *CMAccountTradeService {
+	return &CMAccountTradeService{c: c}
+}
+
+// NewUMADLQuantileService creates a new UMADLQuantileService
+func (c *Client) NewUMADLQuantileService() *UMADLQuantileService {
+	return &UMADLQuantileService{c: c}
+}
+
+// NewCMADLQuantileService creates a new CMADLQuantileService
+func (c *Client) NewCMADLQuantileService() *CMADLQuantileService {
+	return &CMADLQuantileService{c: c}
+}
+
+// NewUMFeeBurnService creates a new UMFeeBurnService
+func (c *Client) NewUMFeeBurnService() *UMFeeBurnService {
+	return &UMFeeBurnService{c: c}
+}
+
+// NewGetMarginOpenOrdersService creates a new GetMarginOpenOrdersService
+func (c *Client) NewGetMarginOpenOrdersService() *GetMarginOpenOrdersService {
+	return &GetMarginOpenOrdersService{c: c}
+}
+
+// NewGetMarginAllOrdersService creates a new GetMarginAllOrdersService
+func (c *Client) NewGetMarginAllOrdersService() *GetMarginAllOrdersService {
+	return &GetMarginAllOrdersService{c: c}
+}
+
+// NewUMFeeBurnStatusService creates a new UMFeeBurnStatusService
+func (c *Client) NewUMFeeBurnStatusService() *UMFeeBurnStatusService {
+	return &UMFeeBurnStatusService{c: c}
+}
+
+// NewGetMarginForceOrdersService creates a new GetMarginForceOrdersService
+func (c *Client) NewGetMarginForceOrdersService() *GetMarginForceOrdersService {
+	return &GetMarginForceOrdersService{c: c}
+}
+
+// NewUMAccountTradesService creates a new UMAccountTradesService
+func (c *Client) NewUMAccountTradesService() *UMAccountTradesService {
+	return &UMAccountTradesService{c: c}
+}
+
+// NewCMAccountTradesService creates a new CMAccountTradesService
+func (c *Client) NewCMAccountTradesService() *CMAccountTradesService {
+	return &CMAccountTradesService{c: c}
+}
+
+// NewUMGetADLQuantileService creates a new UMGetADLQuantileService
+func (c *Client) NewUMGetADLQuantileService() *UMGetADLQuantileService {
+	return &UMGetADLQuantileService{c: c}
+}
+
+// NewMarginOCOQueryService creates a new MarginOCOQueryService
+func (c *Client) NewMarginOCOQueryService() *MarginOCOQueryService {
+	return &MarginOCOQueryService{c: c}
+}
+
+// NewMarginOpenOCOService creates a new MarginOpenOCOService
+func (c *Client) NewMarginOpenOCOService() *MarginOpenOCOService {
+	return &MarginOpenOCOService{c: c}
+}
+
+// NewMarginAccountTradesService creates a new MarginAccountTradesService
+func (c *Client) NewMarginAccountTradesService() *MarginAccountTradesService {
+	return &MarginAccountTradesService{c: c}
+}
+
+// NewMarginRepayDebtService creates a new MarginRepayDebtService
+func (c *Client) NewMarginRepayDebtService() *MarginRepayDebtService {
+	return &MarginRepayDebtService{c: c}
+}
+
+// NewMarginAllOCOService creates a new MarginAllOCOService
+func (c *Client) NewMarginAllOCOService() *MarginAllOCOService {
+	return &MarginAllOCOService{c: c}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

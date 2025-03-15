@@ -14,40 +14,36 @@ func TestMarginLoanService(t *testing.T) {
 	suite.Run(t, new(marginLoanServiceTestSuite))
 }
 
-func (s *marginLoanServiceTestSuite) TestGetMarginLoan() {
+func (s *marginLoanServiceTestSuite) TestMarginLoan() {
 	data := []byte(`{
-		"rows": [
-			{
-				"txId": 12807067523,
-				"asset": "BNB",
-				"principal": "0.84624403",
-				"timestamp": 1555056425000,
-				"status": "CONFIRMED"
-			}
-		],
-		"total": 1
+		"tranId": 100000001
 	}`)
 	s.mockDo(data, nil)
 	defer s.assertDo()
 
-	asset := "BNB"
-	txID := int64(12807067523)
+	asset := "BTC"
+	amount := "1.00000000"
+
 	s.assertReq(func(r *request) {
 		e := newSignedRequest()
 		e.setParam("asset", asset)
-		e.setParam("txId", txID)
+		e.setParam("amount", amount)
 		s.assertRequestEqual(e, r)
 	})
 
-	loans, err := s.client.NewGetMarginLoanService().Asset(asset).TxID(txID).Do(newContext())
-	s.r().NoError(err)
-	s.r().Equal(int64(1), loans.Total)
-	s.r().Len(loans.Rows, 1)
+	res, err := s.client.NewMarginLoanService().
+		Asset(asset).
+		Amount(amount).
+		Do(newContext())
 
-	loan := loans.Rows[0]
-	s.r().Equal(int64(12807067523), loan.TxID)
-	s.r().Equal("BNB", loan.Asset)
-	s.r().Equal("0.84624403", loan.Principal)
-	s.r().Equal(int64(1555056425000), loan.Timestamp)
-	s.r().Equal("CONFIRMED", loan.Status)
+	s.r().NoError(err)
+	e := &MarginLoanResponse{
+		TranID: 100000001,
+	}
+	s.assertLoanResponseEqual(e, res)
+}
+
+func (s *marginLoanServiceTestSuite) assertLoanResponseEqual(e, a *MarginLoanResponse) {
+	r := s.r()
+	r.Equal(e.TranID, a.TranID, "TranID")
 }

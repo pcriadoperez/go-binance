@@ -6,7 +6,6 @@ package portfolio
 import (
 	"context"
 	"testing"
-	"time"
 )
 
 type marginRepayServiceIntegrationTestSuite struct {
@@ -19,32 +18,19 @@ func TestMarginRepayServiceIntegration(t *testing.T) {
 		baseIntegrationTestSuite: *base,
 	}
 
-	t.Run("GetMarginRepay", func(t *testing.T) {
-		service := &GetMarginRepayService{c: suite.client}
-		endTime := time.Now().UnixMilli()
-		startTime := endTime - 7*24*60*60*1000 // 7 days ago
-
-		repays, err := service.
-			Asset("BNB").
-			StartTime(startTime).
-			EndTime(endTime).
+	t.Run("RepayLoan", func(t *testing.T) {
+		service := &MarginRepayService{c: suite.client}
+		response, err := service.
+			Asset("USDC").
+			Amount("10").
 			Do(context.Background())
-
 		if err != nil {
-			t.Fatalf("Failed to get margin repays: %v", err)
+			t.Fatalf("Failed to repay loan: %v", err)
 		}
 
-		if repays.Total < 0 {
-			t.Error("Expected non-negative total")
-		}
-
-		for _, repay := range repays.Rows {
-			if repay.Asset == "" {
-				t.Error("Expected non-empty asset")
-			}
-			if repay.Status == "" {
-				t.Error("Expected non-empty status")
-			}
+		// Basic validation of returned data
+		if response.TranID == 0 {
+			t.Error("Expected non-zero transaction ID")
 		}
 	})
 }
