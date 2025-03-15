@@ -174,4 +174,3 @@ type UMConditionalOrder struct {
 	PriceProtect        bool             `json:"priceProtect"`
 	PriceMatch          string           `json:"priceMatch"`
 }
-

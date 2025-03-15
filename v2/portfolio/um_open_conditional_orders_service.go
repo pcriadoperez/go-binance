@@ -50,4 +50,3 @@ func (s *UMOpenConditionalOrdersService) Do(ctx context.Context) ([]*UMOpenCondi
 	}
 	return res, nil
 }
-

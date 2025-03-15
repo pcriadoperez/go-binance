@@ -8,7 +8,7 @@ import (
 
 type baseIntegrationTestSuite struct {
 	suite.Suite
-	client    *Client
+	client *Client
 }
 
 func SetupTest(t *testing.T) *baseIntegrationTestSuite {

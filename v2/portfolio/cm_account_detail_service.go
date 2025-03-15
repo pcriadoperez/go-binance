@@ -48,4 +48,3 @@ type CMAsset struct {
 	OpenOrderInitialMargin string `json:"openOrderInitialMargin"` // open orders' initial margin required with the latest mark price
 	UpdateTime             int64  `json:"updateTime"`             // last update time
 }
-

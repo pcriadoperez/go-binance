@@ -51,4 +51,3 @@ func (s *MarginOCOQueryService) Do(ctx context.Context, opts ...RequestOption) (
 	}
 	return res, nil
 }
-

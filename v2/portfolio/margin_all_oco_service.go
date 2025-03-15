@@ -81,7 +81,6 @@ func (s *MarginAllOCOService) Do(ctx context.Context) ([]*MarginOCOResponse, err
 	return res, nil
 }
 
-
 // MarginOCODetail defines detail of an OCO order
 type MarginOCODetail struct {
 	Symbol        string `json:"symbol"`
