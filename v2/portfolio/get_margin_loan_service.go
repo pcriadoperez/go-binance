@@ -8,14 +8,14 @@ import (
 
 // GetMarginLoanService query margin loan record
 type GetMarginLoanService struct {
-	c          *Client
-	asset      string
-	txID       *int64
-	startTime  *int64
-	endTime    *int64
-	current    *int64
-	size       *int64
-	archived   *bool
+	c         *Client
+	asset     string
+	txID      *int64
+	startTime *int64
+	endTime   *int64
+	current   *int64
+	size      *int64
+	archived  *bool
 }
 
 // Asset set asset
@@ -86,7 +86,7 @@ func (s *GetMarginLoanService) Do(ctx context.Context, opts ...RequestOption) (*
 	if s.archived != nil {
 		r.setParam("archived", *s.archived)
 	}
-	
+
 	data, _, err := s.c.callAPI(ctx, r, opts...)
 	if err != nil {
 		return nil, err
@@ -107,9 +107,9 @@ type GetMarginLoanResponse struct {
 
 // MarginLoan define margin loan info
 type MarginLoan struct {
-	TxID       int64  `json:"txId"`
-	Asset      string `json:"asset"`
-	Principal  string `json:"principal"`
-	Timestamp  int64  `json:"timestamp"`
-	Status     string `json:"status"` // PENDING/CONFIRMED/FAILED
+	TxID      int64  `json:"txId"`
+	Asset     string `json:"asset"`
+	Principal string `json:"principal"`
+	Timestamp int64  `json:"timestamp"`
+	Status    string `json:"status"` // PENDING/CONFIRMED/FAILED
 }

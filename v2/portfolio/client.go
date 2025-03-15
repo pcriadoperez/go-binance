@@ -779,7 +779,6 @@ func (c *Client) NewMarginCancelOCOService() *MarginCancelOCOService {
 	return &MarginCancelOCOService{c: c}
 }
 
-
 // NewUMModifyOrderService creates a new UMModifyOrderService
 func (c *Client) NewUMModifyOrderService() *UMModifyOrderService {
 	return &UMModifyOrderService{c: c}
@@ -989,41 +988,3 @@ func (c *Client) NewMarginRepayDebtService() *MarginRepayDebtService {
 func (c *Client) NewMarginAllOCOService() *MarginAllOCOService {
 	return &MarginAllOCOService{c: c}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
