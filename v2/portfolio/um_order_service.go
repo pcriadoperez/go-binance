@@ -179,3 +179,4 @@ type UMOrder struct {
 	UpdateTime              int64                   `json:"updateTime"`
 	PriceMatch              PriceMatchType          `json:"priceMatch"`
 }
+
