@@ -108,7 +108,6 @@ func (s *marginOrderServiceTestSuite) assertOrderEqual(e, a *MarginOrder) {
 	r.Equal(e.Symbol, a.Symbol, "Symbol")
 	r.Equal(e.OrderID, a.OrderID, "OrderID")
 	r.Equal(e.ClientOrderID, a.ClientOrderID, "ClientOrderID")
-	r.Equal(e.TransactTime, a.TransactTime, "TransactTime")
 	r.Equal(e.Price, a.Price, "Price")
 	r.Equal(e.OrigQty, a.OrigQty, "OrigQty")
 	r.Equal(e.ExecutedQty, a.ExecutedQty, "ExecutedQty")

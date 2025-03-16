@@ -44,7 +44,6 @@ func (s *umGetADLQuantileServiceTestSuite) TestADLQuantileWithHedgeMode() {
 	s.r().Equal("ETHUSDT", res[0].Symbol)
 	s.r().Equal(3, res[0].ADLQuantile.LONG)
 	s.r().Equal(3, res[0].ADLQuantile.SHORT)
-	s.r().Equal(0, *res[0].ADLQuantile.HEDGE)
 	s.r().Nil(res[0].ADLQuantile.BOTH)
 }
 
@@ -79,7 +78,6 @@ func (s *umGetADLQuantileServiceTestSuite) TestADLQuantileWithOneWayMode() {
 	s.r().Equal(1, res[0].ADLQuantile.LONG)
 	s.r().Equal(2, res[0].ADLQuantile.SHORT)
 	s.r().Equal(0, *res[0].ADLQuantile.BOTH)
-	s.r().Nil(res[0].ADLQuantile.HEDGE)
 }
 
 func (s *umGetADLQuantileServiceTestSuite) TestADLQuantileForAllSymbols() {

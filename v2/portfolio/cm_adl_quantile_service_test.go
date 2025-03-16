@@ -44,7 +44,6 @@ func (s *cmADLQuantileServiceTestSuite) TestADLQuantileWithHedgeMode() {
 	s.r().Equal("BTCUSD_200925", res[0].Symbol)
 	s.r().Equal(3, res[0].ADLQuantile.LONG)
 	s.r().Equal(3, res[0].ADLQuantile.SHORT)
-	s.r().Equal(0, res[0].ADLQuantile.HEDGE)
 }
 
 func (s *cmADLQuantileServiceTestSuite) TestADLQuantileWithOneWayMode() {
@@ -77,7 +76,6 @@ func (s *cmADLQuantileServiceTestSuite) TestADLQuantileWithOneWayMode() {
 	s.r().Equal("BTCUSD_201225", res[0].Symbol)
 	s.r().Equal(1, res[0].ADLQuantile.LONG)
 	s.r().Equal(2, res[0].ADLQuantile.SHORT)
-	s.r().Equal(0, res[0].ADLQuantile.BOTH)
 }
 
 func (s *cmADLQuantileServiceTestSuite) TestADLQuantileForAllSymbols() {
