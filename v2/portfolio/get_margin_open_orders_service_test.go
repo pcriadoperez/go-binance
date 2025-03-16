@@ -57,8 +57,8 @@ func (s *getMarginOpenOrdersServiceTestSuite) TestGetOpenOrders() {
 	s.r().Equal("BNBBTC", orders[0].Symbol)
 	s.r().Equal("qhcZw71gAkCCTv0t0k8LUK", orders[0].ClientOrderID)
 	s.r().Equal(int64(211842552), orders[0].OrderID)
-	s.r().Equal("SELL", orders[0].Side)
-	s.r().Equal("LIMIT", orders[0].Type)
+	s.r().Equal(SideTypeSell, orders[0].Side)
+	s.r().Equal(OrderTypeLimit, orders[0].Type)
 	s.r().Equal("NEW", orders[0].Status)
 }
 

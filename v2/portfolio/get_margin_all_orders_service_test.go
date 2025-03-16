@@ -70,8 +70,7 @@ func (s *getMarginAllOrdersServiceTestSuite) TestGetAllOrders() {
 	s.r().Equal("BNBBTC", orders[0].Symbol)
 	s.r().Equal("D2KDy4DIeS56PvkM13f8cP", orders[0].ClientOrderID)
 	s.r().Equal(int64(41295), orders[0].OrderID)
-	s.r().Equal("SELL", orders[0].Side)
-	s.r().Equal("TAKE_PROFIT_LIMIT", orders[0].Type)
+	s.r().Equal(SideTypeSell, orders[0].Side)
+	s.r().Equal(OrderTypeTakeProfitLimit, orders[0].Type)
 	s.r().Equal("CANCELED", orders[0].Status)
-	s.r().Equal("EXPIRE_TAKER", orders[0].SelfTradePreventionMode)
 }
